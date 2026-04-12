@@ -1,0 +1,79 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Movie Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>🎬 Movie Chatbot</h1>
+                    <p>Powered by Gemini AI • Ask me anything about movies!</p>
+                </div>
+                <button class="clear-btn" onclick="clearChat()" title="Clear conversation">
+                    🗑️ Clear
+                </button>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container" id="chatContainer">
+            <div class="messages" id="messages">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>👋 Hello! I'm your <strong>AI Movie Chatbot</strong> powered by Google Gemini!</p>
+                        <p>I can have natural conversations about movies. Try asking me:</p>
+                        <div class="suggestions">
+                            <button class="suggestion-btn"
+                                onclick="sendSuggestion('Tell me about Inception and why it\'s so popular')">Why is
+                                Inception popular?</button>
+                            <button class="suggestion-btn"
+                                onclick="sendSuggestion('Compare The Dark Knight and Joker')">Compare Dark Knight vs
+                                Joker</button>
+                            <button class="suggestion-btn"
+                                onclick="sendSuggestion('I love sci-fi movies with deep stories. What should I watch?')">Recommend
+                                deep sci-fi</button>
+                            <button class="suggestion-btn"
+                                onclick="sendSuggestion('What are the best movies from the 90s?')">Best 90s
+                                movies</button>
+                            <button class="suggestion-btn"
+                                onclick="sendSuggestion('Which Marvel movie should I start with?')">Start Marvel
+                                journey</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Ask anything about movies..." autocomplete="off"
+                    autofocus>
+                <button id="sendBtn" onclick="sendMessage()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <div class="input-footer">
+                <span>Gemini AI • Free tier • Movies database</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+
+</html>
