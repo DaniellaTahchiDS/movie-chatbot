@@ -1,6 +1,3 @@
-# README.md
-
-
 # 🎬 AI Movie Chatbot
 
 <div align="center">
